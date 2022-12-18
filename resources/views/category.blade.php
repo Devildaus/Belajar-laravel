@@ -8,7 +8,8 @@
     <article class mb-5>
         <a href="/posts/{{ $post->slug }}">
             <h2>{{ $post->title }}</h2>
-        </a> 
+        </a>
+        <p>By. Mukhamad Firdaus <a href="/categories/{{ $post->category->slug }}">  {{ $post->category->name   }}</a></p> 
 
         {{ $post->excerpt }}
         <a href="/posts/{{ $post->slug }}">
