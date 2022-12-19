@@ -2,6 +2,8 @@
 
 @section('container')
 
+<h1 align=center>{{ $title }}</h1></br>
+
 @foreach ($posts as $post)
     <Style>a{text-decoration:none}</Style>
     <article class mb-5 >
