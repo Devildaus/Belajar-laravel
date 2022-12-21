@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand" href="/">COBA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,12 +13,18 @@
           <a class="nav-link {{ ($active === 'about') ? 'active' : '' }}" href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ ($active === 'posts') ? 'active' : '' }}" href="/blog">Blog</a>
+          <a class="nav-link {{ ($active === 'posts') ? 'active' : '' }}" href="/posts">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($active === 'categories') ? 'active' : '' }}" href="/categories">Categories</a>
         </li>
       </ul>
     </div>
+    <form action="/posts" class="d-flex align-left">
+      <div class="input-group">
+        <input type="text" class="form-control me-2" name="search" placeholder="Search.." value="{{ request('search') }}">
+        <button class="button" style="border-radius: 10px;" type="submit">Search</button>
+      </div>
+    </form>
   </div>
 </nav>
