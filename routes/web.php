@@ -19,13 +19,15 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "active" => 'home',
     ]);
 });
 
-Route::get('/about', function(){
+Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        "active" => 'about',
         "name" => "Firdaus",
         "email" => "wow@gmail.com",
         "image" => "image.jpg"
@@ -43,25 +45,26 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 
 //category binding
-Route::get('/categories', function(){
-    return view('categories',[
-        'title'=>'Post Categories',
-        'categories'=>Category::all()
+Route::get('/categories', function () {
+    return view('categories', [
+        'title' => 'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (Category $category){
-    return view('posts',[
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('posts', [
         'title' => "Posts By category : $category->name",
-        'posts' => $category->posts->load('category','author'),
+        'active' => 'categories',
+        'posts' => $category->posts->load('category', 'author'),
 
     ]);
 });
 
-Route::get('/authors/{author:username}', function(User $author) {
+Route::get('/authors/{author:username}', function (User $author) {
     return view('posts', [
         'title' => "Posts By Author : $author->name",
-        'posts' => $author->posts->load('category','author'),
+        'posts' => $author->posts->load('category', 'author'),
     ]);
 });
-
