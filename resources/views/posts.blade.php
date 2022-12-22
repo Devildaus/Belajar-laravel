@@ -2,18 +2,10 @@
 
 @section('container')
 <h1 align=center>{{ $title }}</h1></br>
-
-<form action="/posts" class="d-flex align-left">
-    <div class="input-group">
-        <input type="text" class="form-control me-2" name="search" placeholder="Search.." value="{{ request('search') }}">
-        <button class="button" style="border-radius: 10px;" type="submit">Search</button>
-    </div>
-</form>
-
 @if ($posts->count())
 <div class="card mb-3">
-    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name ?? 'unknown' }}" class="card-img-top" alt="{{ $posts[0]->category->name ?? 'unknown'  }}">
-    <div class="card-body text-center">
+    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name ?? 'unknown' }}" class="card-img-top" alt="{{ $posts[0]->category->name ?? 'unknown'  }}" style="width:900px; margin:auto">
+    <div class=" card-body text-center">
         <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
         <p>
             <small class="text-muted">

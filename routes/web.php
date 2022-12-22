@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\User;
+use PharIo\Manifest\Author;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,11 @@ Route::get('/', function () {
     return view('home', [
         "title" => "Home",
         "active" => 'home',
+        "posts" => Post::latest()->where('category_id', 2)->paginate(6)->withQueryString(),
+        "posts2" => Post::latest()->where('category_id', 1)->paginate(6)->withQueryString()
     ]);
 });
+
 
 Route::get('/about', function () {
     return view('about', [

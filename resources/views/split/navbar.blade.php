@@ -1,6 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="navbar navbar-dark">
+  <div class="container">
+    <img src=" /img/logo.png" style="    max-width: 100%;
+    height: auto;
+    max-height: 110px;
+    vertical-align: middle;
+    border-style: none;
+    object-fit: cover;" alt=" wow">
+  </div>
+</div>
+<nav class=" navbar navbar-expand-lg navbar-dark bg-primary" style="border-radius: 10px">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">COBA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
