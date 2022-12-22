@@ -24,8 +24,6 @@
                 @endforeach
         </div>
 </div>
-<h1>Fiqih</h1>
-<h1>Pena Pondok</h1>
 @else
 <p class="text-center fs-4">Not Found</p>
 @endif
