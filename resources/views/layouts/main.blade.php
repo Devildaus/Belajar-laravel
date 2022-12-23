@@ -11,6 +11,7 @@
 
 <body>
   @include('split.navbar')
+  @include('split.image')
   <div class="container mt-4">
     @yield('container')
   </div>
