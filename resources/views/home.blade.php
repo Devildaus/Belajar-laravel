@@ -24,13 +24,11 @@
                 @endforeach
         </div>
 </div>
-<h1>Fiqih</h1>
-<h1>Pena Pondok</h1>
 @else
 <p class="text-center fs-4">Not Found</p>
 @endif
 <div class="d-flex justify-content-end">
-        {{ $posts->links() }}
+        <a href="/posts?category={{ $post->category->name }}">Lebih Banyak</a>
 </div>
 
 <h1 style="margin-bottom: 50px;">Pengumuman</h1>
@@ -62,7 +60,7 @@
 <p class="text-center fs-4">Not Found</p>
 @endif
 <div class="d-flex justify-content-end">
-        {{ $posts2->links() }}
+        <a href="/posts?category={{ $post->category->name }}">Lebih Banyak</a>
 </div>
 
 

@@ -22,8 +22,8 @@ Route::get('/', function () {
     return view('home', [
         "title" => "Home",
         "active" => 'home',
-        "posts" => Post::latest()->where('category_id', 2)->paginate(6)->withQueryString(),
-        "posts2" => Post::latest()->where('category_id', 1)->paginate(6)->withQueryString()
+        "posts" => Post::latest()->where('category_id', 2)->paginate(3)->withQueryString(),
+        "posts2" => Post::latest()->where('category_id', 1)->paginate(3)->withQueryString()
     ]);
 });
 
